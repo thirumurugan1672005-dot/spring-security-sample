@@ -65,11 +65,11 @@
           <version>4.1.2</version>
          <scope>compile</scope>
        </dependency>
-	   <!-- Source: https://mvnrepository.com/artifact/org.springframework.security/spring-security-crypto -->
+	 <!-- Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
 <dependency>
-    <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-crypto</artifactId>
-    <version>7.1.2</version>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+    <version>4.1.2</version>
     <scope>compile</scope>
 </dependency>
 		<dependency>

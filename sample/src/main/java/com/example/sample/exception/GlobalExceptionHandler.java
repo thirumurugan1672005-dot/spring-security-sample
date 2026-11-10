@@ -5,8 +5,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
-
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ProblemDetail;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 
@@ -46,5 +47,13 @@ public class GlobalExceptionHandler {
 
           detail.setProperty("errors", errors);
           return detail;
+     }
+
+     @ExceptionHandler (BadCredentialsException.class)
+     public ProblemDetail handleBadCredentailsException(BadCredentialsException e){
+           ProblemDetail detail = ProblemDetail.forStatus(HttpStatus.UNAUTHORIZED);
+           detail.setTitle("Wrong credentials");
+           detail.setDetail("Incorrect email or password");
+           return detail;
      }
 }
