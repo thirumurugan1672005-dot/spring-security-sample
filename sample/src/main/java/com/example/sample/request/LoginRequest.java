@@ -7,9 +7,9 @@ import lombok.Getter;
 @Getter 
 public class LoginRequest {
     @NotBlank (message = "email cannot be empty")
-    @Size(max = 255)
+    @Size(max = 255 , message = "email is too long")
     private String email;
     @NotBlank (message = "password cannot be empty")
-    @Size (max = 72)
+    @Size (max = 72 ,message = "password is too long")
     private String password;
 }

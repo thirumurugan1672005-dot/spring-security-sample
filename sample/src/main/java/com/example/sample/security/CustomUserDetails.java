@@ -14,11 +14,11 @@ import com.example.sample.model.Role;
 
 public class CustomUserDetails implements UserDetails {
     private static final long serialVersionUID = 1L;
-    private UUID userId;
-    private String displayName;
-    private String email;
-    private String passwordHash;
-    private Role role;
+    private final UUID userId;
+    private final  String displayName;
+    private final  String email;
+    private final String passwordHash;
+    private final  Role role;
 
     public CustomUserDetails(UUID userId, String username, String email, String passwordHash, Role role) {
         this.userId = userId;
@@ -51,6 +51,10 @@ public class CustomUserDetails implements UserDetails {
 
     public String getDisplayName() {
         return displayName;
+    }
+
+    public String getEmail(){
+        return email;
     }
 
     public Role getRole() {
